@@ -1,6 +1,7 @@
 import 'package:baw_todo/app/core/utils/extensions.dart';
 import 'package:baw_todo/app/modules/home/controller.dart';
 import 'package:baw_todo/app/modules/home/widget/add_card.dart';
+import 'package:baw_todo/app/modules/home/widget/task_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -23,11 +24,18 @@ class HomePage extends GetView<HomeController> {
                 ),
               ),
             ),
-            GridView.count(
-              crossAxisCount: 2,
-              shrinkWrap: true,
-              physics: const ClampingScrollPhysics(),
-              children: [AddCard()],
+            Obx(
+              () => GridView.count(
+                crossAxisCount: 2,
+                shrinkWrap: true,
+                physics: const ClampingScrollPhysics(),
+                children: [
+                  ...controller.tasks
+                      .map((element) => TaskCard(task: element))
+                      .toList(),
+                  AddCard()
+                ],
+              ),
             )
           ],
         ),
