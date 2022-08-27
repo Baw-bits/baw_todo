@@ -1,5 +1,6 @@
 import 'package:baw_todo/app/core/utils/extensions.dart';
 import 'package:baw_todo/app/modules/home/controller.dart';
+import 'package:baw_todo/app/modules/home/widget/details/doing_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
@@ -125,7 +126,9 @@ class DetailPage extends StatelessWidget {
                   }
                 },
               ),
-            )
+            ),
+            DoingList(),
+            DoingList()
           ],
         ),
       ),
