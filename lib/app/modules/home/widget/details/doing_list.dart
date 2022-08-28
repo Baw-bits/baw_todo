@@ -51,6 +51,9 @@ class DoingList extends StatelessWidget {
                               padding: EdgeInsets.symmetric(horizontal: 4.0.wp),
                               child: Text(
                                 element['title'],
+                                style: TextStyle(
+                                  fontSize: 12.0.sp,
+                                ),
                                 overflow: TextOverflow.ellipsis,
                               ),
                             )

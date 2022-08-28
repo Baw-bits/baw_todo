@@ -1,7 +1,7 @@
 import 'package:baw_todo/app/core/utils/extensions.dart';
 import 'package:baw_todo/app/data/models/task.dart';
 import 'package:baw_todo/app/modules/home/controller.dart';
-import 'package:baw_todo/app/modules/home/widget/detail_page.dart';
+import 'package:baw_todo/app/modules/detail/detail_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -39,8 +39,9 @@ class TaskCard extends StatelessWidget {
         child: Column(
           children: [
             StepProgressIndicator(
-              totalSteps: 100,
-              currentStep: 80,
+              totalSteps: homeCtrl.isTodosEmpty(task) ? 1 : task.todos!.length,
+              currentStep:
+                  homeCtrl.isTodosEmpty(task) ? 0 : homeCtrl.getDoneTodo(task),
               size: 5,
               padding: 0,
               selectedGradientColor: LinearGradient(
