@@ -37,7 +37,7 @@ class AddDialog extends StatelessWidget {
                       onPressed: () {
                         if (homeCtrl.formKey.currentState!.validate()) {
                           if (homeCtrl.task.value == null) {
-                            EasyLoading.showError('Please select taskk type');
+                            EasyLoading.showError('Please select task type');
                           } else {
                             var success = homeCtrl.updateTask(
                                 homeCtrl.task.value!,

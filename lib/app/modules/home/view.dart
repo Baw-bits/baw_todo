@@ -82,7 +82,7 @@ class HomePage extends GetView<HomeController> {
         },
         onAccept: (Task task) {
           controller.deleteTask(task);
-          EasyLoading.showSuccess('Delete Successful');
+          EasyLoading.showSuccess('Deleted Successful');
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
